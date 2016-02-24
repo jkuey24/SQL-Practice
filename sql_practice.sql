@@ -350,10 +350,8 @@ ORDER BY
 
 	-- Which countries have the highest proportion of official language speakers? The lowest?
 	SELECT
-		c.name AS country_name,
-		cl.percentage as percentage
-
-
+		DISTINCT c.name AS country_name,
+	
 
 	FROM
 		countrylanguage cl JOIN
@@ -368,15 +366,11 @@ ORDER BY
 			ORDER BY percentage DESC LIMIT 10)
 
 
-	ORDER BY
-		percentage desc limit 10
-
-
 --#######
 
 SELECT
-	c.name AS country_name,
-	cl.percentage as percentage
+	DISTINCT c.name AS country_name,
+	
 
 	
 
@@ -394,5 +388,3 @@ WHERE
 		ORDER BY percentage ASC LIMIT 10)
 
 
-ORDER BY
-	percentage ASC limit 20
